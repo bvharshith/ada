@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<time.h>
+
+int main()
+{
+    int n, arr[1000], key, i;
+    clock_t start, end;
+    printf("Enter value for n: ");
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        arr[i]=i;
+        key=arr[n-1];
+        
+        i=0;
+        start=clock();
+        while(i<n)
+        {
+            if(arr[i]==key)
+            break;
+            i++;
+        }
+        end=clock();
+        printf("execution time %f",(double)(end-start)/CLOCKS_PER_SEC);
+        if(i<n)
+        printf("found at %d",i+1);
+        else
+        printf("not found");
+
+    return 0;
+}
