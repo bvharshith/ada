@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include<time.h>
+
+void delay(){
+    int i, temp;
+    for(i=0;i<5000;i++)
+    temp=123/456;
+}
+
+int main()
+{
+    int n, arr[1000], key, i, beg, end, mid;
+    clock_t start, endT;
+    printf("Enter value for n: ");
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        arr[i]=i;
+        key=arr[n-1];
+        
+        i=0;
+        beg=0;
+        end=n-1;
+        start=clock();
+        while(beg!=end)
+        {
+            delay();
+            mid=(beg+end)/2;
+            if(key==arr[mid])
+            break;
+            else if(key>arr[mid])
+            beg=mid+1;
+            else if(key<arr[mid])
+            end=mid-1;
+        }
+        endT=clock();
+        printf("execution time %f",(double)(end-start)/CLOCKS_PER_SEC);
+        if(beg==end)
+        printf("found at %d",mid+1);
+        else
+        printf("not found");
+
+    return 0;
+}
