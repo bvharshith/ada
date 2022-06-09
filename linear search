@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include<time.h>
 
+void delay(){
+    int i, temp;
+    for(i=0;i<5000;i++)
+    temp=123/456;
+}
+
 int main()
 {
     int n, arr[1000], key, i;
