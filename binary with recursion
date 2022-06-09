@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <time.h>
+
+void delay()
+{
+    int i, temp;
+    for(i=0;i<4000;i++)
+    temp=123/456;
+}
+ 
+
+int binarySearch(int arr[], int beg, int end, int x)
+{
+int rec;
+{
+    if (end >= beg) {
+        int mid = beg + (end - beg) / 2;
+         if (arr[mid] == x)
+            return mid;
+         if (arr[mid] > x)
+            return binarySearch(arr, beg, mid - 1, x);
+         return binarySearch(arr, mid + 1, end, x);
+    }
+    return -1;
+}
+}
+ 
+int main(void)
+{
+    int arr[] = { 2, 3, 4, 10, 40 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x;
+    int i;
+    clock_t start, end;
+    printf("Enter value for n: ");
+    scanf("%d", &x);
+    start=clock();
+        while(i<x)
+        {
+            if(arr[x]==n)
+            break;
+            i++;
+        }
+        end=clock();
+    int result = binarySearch(arr, 0, n - 1, x);
+    printf("execution time %f",(double)(end-start)/CLOCKS_PER_SEC);
+    (result == -1)
+        ? printf("Element is not present in array")
+        : printf("Element is present at index %d", result);
+    return 0;
+}
