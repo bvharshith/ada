@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <time.h>
+
+void delay(){
+    int i, temp;
+    for(i=0;i<5000;i++)
+    temp=123/456;
+}
+
+int linearSrch(int arr[], int size, int x) {
+    int rec;
+ 
+    size--;
+ 
+    if (size >= 0) {
+        if (arr[size] == x)
+            return size;
+        else
+            rec = linearSrch(arr, size, x);
+    }
+    else
+        return -1;
+ 
+    return rec;
+}
+ 
+int main(void) {
+    int arr[] = {12, 34, 54, 2, 3};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    int i;
+    clock_t start, end;
+    printf("Enter value for n: ");
+    scanf("%d", &n);
+    start=clock();
+        while(i<n)
+        {
+            if(arr[n]==size)
+            break;
+            i++;
+        }
+        end=clock();
+    int indx;
+ 
+    indx = linearSrch(arr, size, n);
+    printf("execution time %f",(double)(end-start)/CLOCKS_PER_SEC);
+ 
+    if (indx != -1)
+        printf("Element %d is present at index %d", n, indx);
+    else
+        printf("Element %d is not present", n);
+ 
+    return 0;
+}
